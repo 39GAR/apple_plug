@@ -2,38 +2,47 @@
 layout: default
 title: Home
 ---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>apple plug</title>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-media">
+        <div
+          class="hero-poster"
+          style="background-image:url('https://res.cloudinary.com/dodevsdjg/image/upload/v1766139115/brandon-romanchuk-NOFyRmSQfUQ-unsplash_pfrnhc.jpg');"
+        ></div>
 
-<section class="hero">
-  <div class="hero-media">
-    <div
-      class="hero-poster"
-      style="background-image:url('https://res.cloudinary.com/dodevsdjg/image/upload/v1766139115/brandon-romanchuk-NOFyRmSQfUQ-unsplash_pfrnhc.jpg');"
-    ></div>
+        <video
+          id="heroVideo"
+          class="hero-video"
+          muted
+          playsinline
+          preload="auto"
+        >
+          <source
+            src="https://res.cloudinary.com/dodevsdjg/video/upload/v1766142602/Apple_hero_ojku45.mp4"
+            type="video/mp4"
+          />
+        </video>
 
-    <video
-      id="heroVideo"
-      class="hero-video"
-      muted
-      playsinline
-      preload="auto"
-    >
-      <source
-        src="https://res.cloudinary.com/dodevsdjg/video/upload/v1766142602/Apple_hero_ojku45.mp4"
-        type="video/mp4"
-      />
-    </video>
+        <!-- TEXT OVERLAY -->
+        <div class="hero-content">
+          <h1>
+            Your plug for Apple    <a href="/" class="brand"><img
+                    src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766136574/ChatGPT_Image_Dec_19_2025_11_28_10_AM_mvtbac.png"
+                    alt="Apple Plug logo"
+                    class="brand-logo"
+                  />
+                  <span class="brand-name"></span>
+                </a>
+          </h1>
+        </div>
+      </div>
+    </section>
 
-    <!-- TEXT OVERLAY -->
-    <div class="hero-content">
-      <h1>
-        Your plug for Apple    <a href="/" class="brand"><img
-                src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766136574/ChatGPT_Image_Dec_19_2025_11_28_10_AM_mvtbac.png"
-                alt="Apple Plug logo"
-                class="brand-logo"
-              />
-              <span class="brand-name"></span>
-            </a>
-      </h1>
-    </div>
-  </div>
-</section>
+  </body>
+</html>
