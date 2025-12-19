@@ -1,7 +1,5 @@
 {% include header.html %}
 {{ content }}
 {% include footer.html %}
-<link rel="stylesheet" href="/main.css">
-<script type="text/javascript" src="script.js">
-
-</script>
+<link rel="stylesheet" href="{{ '/main.css' | relative_url }}">
+<script src="{{ '/script.js' | relative_url }}"></script>
