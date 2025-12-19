@@ -54,6 +54,21 @@ body {
 .nav-link:hover {
   color: #000;
 }
+/* NAV LINKS – force clean Apple-style colors */
+.nav a,
+.nav a:visited {
+  color: #111;           /* black */
+  text-decoration: none; /* no underline */
+}
+
+.nav a:hover {
+  color: #555;           /* darker grey on hover */
+}
+
+.nav a:active {
+  color: #111;
+}
+
 
 /* WHATSAPP */
 .whatsapp-btn {
@@ -186,4 +201,241 @@ body {
   font-weight: 500;
   letter-spacing: -0.02em;
   color: #000;
+}
+/* STORY LINE */
+/* STORY */
+.story {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 54px 20px 20px;
+}
+
+.story-head h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(22px, 2.6vw, 34px);
+}
+
+.story-head p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 15px;
+  max-width: 60ch;
+}
+
+/* SLIDER TRACK */
+.slider { margin-top: 22px; }
+
+.slides {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 16px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding-bottom: 12px;
+}
+
+.slide {
+  scroll-snap-align: start;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* BACKGROUND SLIDE */
+.slide-bg {
+  position: relative;
+  height: 420px;
+}
+
+/* background media layer */
+.slide-bg-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* readability layer */
+.slide-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* text overlay */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 32px;
+  color: #fff;
+}
+
+.slide-overlay h3 {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.slide-overlay p {
+  margin: 14px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 48ch;
+  color: rgba(255,255,255,0.9);
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.dot.is-active { background: #111; }
+
+/* scrollbar (optional) */
+.slides::-webkit-scrollbar { height: 8px; }
+.slides::-webkit-scrollbar-thumb { background: #e6e6e6; border-radius: 999px; }
+/* iPhones tap */
+/* PAGE WRAP */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 44px 20px 20px;
+}
+
+.whats_state{
+  color:#fff;
+  text-decoration: none;
+}
+.page-head h1 {
+  margin: 0;
+  font-size: clamp(26px, 3.2vw, 40px);
+  letter-spacing: -0.02em;
+}
+
+.page-head p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 15px;
+  max-width: 60ch;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  grid-column: span 12;
+  display: block;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  border-color: #d6d6d6;
+}
+
+.product-media {
+  aspect-ratio: 16 / 9;
+  background: #f6f6f6;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 16px 16px 18px;
+}
+
+.product-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.product-top h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  color: #555;
+  white-space: nowrap;
+}
+
+.product-sub {
+  margin: 10px 0 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.product-meta {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product-meta span {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  color: #555;
+}
+
+/* RESPONSIVE: 2 cards per row on desktop later */
+@media (min-width: 860px) {
+  .product-card { grid-column: span 6; }
 }
