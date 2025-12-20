@@ -75,3 +75,84 @@ window.addEventListener("load", () => {
 
   setActive(0);
 });
+// iPhone 14 pro MAX
+window.addEventListener("load", () => {
+  const productPage = document.querySelector(".product-page");
+  if (!productPage) return;
+
+  const WHATSAPP_NUMBER = "27604973873"; 
+
+  const getSelected = (key) => {
+    const group = productPage.querySelector(`.pills[data-option="${key}"]`);
+    if (!group) return "";
+    const selected = group.querySelector(".pill.is-selected");
+    return selected ? selected.dataset.value : "";
+  };
+
+  const setSelected = (btn) => {
+    const group = btn.closest(".pills");
+    if (!group) return;
+    group.querySelectorAll(".pill").forEach(b => b.classList.remove("is-selected"));
+    btn.classList.add("is-selected");
+    updateWhatsAppLink();
+  };
+
+  productPage.querySelectorAll(".pill").forEach(btn => {
+    btn.addEventListener("click", () => setSelected(btn));
+  });
+
+  const custName = document.getElementById("custName");
+  const custCity = document.getElementById("custCity");
+  const delivery = document.getElementById("delivery");
+  const whatsappBtn = document.getElementById("whatsappOrder");
+  const copyBtn = document.getElementById("copyDetails");
+
+  [custName, custCity, delivery].forEach(el => {
+    if (!el) return;
+    el.addEventListener("input", updateWhatsAppLink);
+    el.addEventListener("change", updateWhatsAppLink);
+  });
+
+  function buildMessage() {
+    const productName = productPage.dataset.product || "iPhone";
+
+    const msg =
+`Hi, I want to order:
+
+Model: ${productName}
+Color: ${getSelected("color")}
+Storage: ${getSelected("storage")}
+Condition: ${getSelected("condition")}
+Network: ${getSelected("network")}
+RAM: ${getSelected("ram")}
+
+Name: ${custName?.value || ""}
+City: ${custCity?.value || ""}
+Delivery: ${delivery?.value || ""}
+
+Please confirm availability and final price.`;
+
+    return msg;
+  }
+
+  function updateWhatsAppLink() {
+    const text = encodeURIComponent(buildMessage());
+    if (whatsappBtn) {
+      whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(buildMessage());
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy details"), 1200);
+      } catch {
+        alert("Copy failed. Please copy manually from the WhatsApp message.");
+      }
+    });
+  }
+
+  updateWhatsAppLink();
+});
