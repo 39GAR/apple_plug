@@ -1,48 +1,75 @@
-<header class="site-header">
-  <div class="header-inner">
+---
+layout: default
+title: iPhone 14 Pro Max
+---
 
-    <a href="/" class="brand">
-      <img
-        src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766136574/ChatGPT_Image_Dec_19_2025_11_28_10_AM_mvtbac.png"
-        alt="Apple Plug logo"
-        class="brand-logo"
-      />
-      <span class="brand-name">Apple Plug</span>
-    </a>
-
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/Iphones.html">iPhones</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-
-    <a
-      class="whatsapp-btn"
-      href="https://wa.me/27604973873"
-      target="_blank"
-      rel="noopener"
-    >
-      WhatsApp
-    </a>
-
-  </div>
-</header>
-
-<section class="product-page" data-product="iPhone 14 Pro Max">
+<section class="product-page" data-product="iPhone 14">
   <div class="product-wrap">
 
+    <!-- GALLERY (DOT SLIDER) -->
     <div class="product-gallery">
-      <img id="productImage"
-           src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766139115/brandon-romanchuk-NOFyRmSQfUQ-unsplash_pfrnhc.jpg"
-           alt="iPhone 14 Pro Max" />
+      <div class="media-slider" id="mediaSlider">
+        <div class="media-track">
+
+          <div class="media-slide">
+            <img
+              src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766229458/thai-nguyen-fw_KhcwHmlY-unsplash_x34333.jpg"
+              alt="iPhone 14 Pro Max - Photo 2"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="media-slide">
+            <img
+              src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766229472/felix-fischer-1m0BBZpeSUs-unsplash_qgt7nn.jpg"
+              alt="iPhone 14 Pro Max - Photo 1"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- You said "Video" but this is a JPG, so it's an image slide for now -->
+          <div class="media-slide">
+            <img
+              src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766229456/sophia-stark--BfD3tp5v78-unsplash_jzl2bw.jpg"
+              alt="Media slide (video placeholder image)"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="media-slide">
+            <img
+              src="https://res.cloudinary.com/dodevsdjg/image/upload/v1766229456/sophia-stark-2xPgFphVZEE-unsplash_rlbbw2.jpg"
+              alt="iPhone 14 Pro Max - Photo 3"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="media-dots" aria-label="Media navigation">
+          <button class="media-dot is-active" type="button" aria-label="Slide 1"></button>
+          <button class="media-dot" type="button" aria-label="Slide 2"></button>
+          <button class="media-dot" type="button" aria-label="Slide 3"></button>
+          <button class="media-dot" type="button" aria-label="Slide 4"></button>
+        </div>
+      </div>
     </div>
 
+    <!-- DETAILS -->
     <div class="product-details">
-      <h1 class="product-title">iPhone 14 Pro Max</h1>
+      <h1 class="product-title">iPhone 14 series</h1>
       <p class="product-subtitle">Select your specs, then finalize on WhatsApp.</p>
 
-      <div class="product-price" id="productPrice">From R0</div>
+      <div class="product-price" id="productPrice">From R8,000.</div>
+
+      <div class="option">
+        <div class="option-label">Model</div>
+        <div class="pills" data-option="storage">
+          <button class="pill is-selected" type="button" data-value="128GB">Standard</button>
+          <button class="pill" type="button" data-value="256GB">Plus</button>
+          <button class="pill" type="button" data-value="512GB">Pro</button>
+          <button class="pill" type="button" data-value="1TB">Pro Max</button>
+        </div>
+      </div>
 
       <div class="option">
         <div class="option-label">Color</div>
@@ -123,22 +150,3 @@
     </div>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-copy">
-      © 2025 Apple Plug
-    </p>
-
-    <nav class="footer-nav">
-      <a href="/support">Support</a>
-      <a href="/contact">Contact</a>
-      <a href="https://wa.me/27604973873" target="_blank" rel="noopener">
-        WhatsApp
-      </a>
-    </nav>
-  </div>
-</footer>
-
-<link rel="stylesheet" href="/main.css">
-<script src="/script.js"></script>

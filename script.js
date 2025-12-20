@@ -80,7 +80,7 @@ window.addEventListener("load", () => {
   const productPage = document.querySelector(".product-page");
   if (!productPage) return;
 
-  const WHATSAPP_NUMBER = "27604973873"; 
+  const WHATSAPP_NUMBER = "27604973873";
 
   const getSelected = (key) => {
     const group = productPage.querySelector(`.pills[data-option="${key}"]`);
@@ -155,4 +155,46 @@ Please confirm availability and final price.`;
   }
 
   updateWhatsAppLink();
+});
+//SLIDER
+window.addEventListener("load", () => {
+  const slider = document.getElementById("mediaSlider");
+  if (!slider) return;
+
+  const track = slider.querySelector(".media-track");
+  const slides = Array.from(slider.querySelectorAll(".media-slide"));
+  const dots = Array.from(slider.querySelectorAll(".media-dot"));
+
+  const setActive = (index) => {
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  };
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      track.scrollTo({ left: slides[i].offsetLeft, behavior: "smooth" });
+      setActive(i);
+    });
+  });
+
+  let raf = null;
+  track.addEventListener("scroll", () => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const left = track.scrollLeft;
+      let bestIndex = 0;
+      let bestDist = Infinity;
+
+      slides.forEach((s, i) => {
+        const dist = Math.abs(s.offsetLeft - left);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIndex = i;
+        }
+      });
+
+      setActive(bestIndex);
+    });
+  });
+
+  setActive(0);
 });
